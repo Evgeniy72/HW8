@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-class error {
+class error : public std::exception {
 public:
-	const char* fig();
+	const char* what() const override;
 };

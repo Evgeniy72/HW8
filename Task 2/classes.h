@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "error.h"
 class Figure {
 protected:
 	int sides_count;

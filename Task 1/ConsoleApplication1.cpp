@@ -1,7 +1,11 @@
 ﻿#include <iostream>
-std::string invalid_length() { return "Неверная длина, до свиданья"; }
+class Invalid : public std::exception
+{
+public:
+	const char* what() const override { return "Неверная длина, до свиданья"; }
+};
 int function(std::string str, int forbidden_length) {
-	if (forbidden_length == str.length()) throw invalid_length;
+	if (forbidden_length == str.length()) throw Invalid();
 	return str.length();
 }
 int main()
@@ -18,7 +22,8 @@ int main()
 		{
 						std::cout << "Длина слова  " << str << "  равна   " << function(str, a) << std::endl;
 		}
-		catch (...) { std::cout << invalid_length(); }
+		catch (const Invalid& ex) { std::cout << ex.what(); }
+		catch (...) { std::cout << "Неизвестная ошибка"; }
 	} while (a != str.length());
 }
 

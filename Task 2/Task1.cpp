@@ -7,9 +7,12 @@ int main(){
 		setlocale(LC_ALL, "Russian");
 		try {
 		Figure zero;
-		std::cout << zero.get_name << " с количеством сторон " << zero.get_sides_count << "создана" << std::endl;
+		std::cout << zero.get_name() << " с количеством сторон " << zero.get_sides_count() << "создана" << std::endl;
 	}
-	catch (const error& ex) { std::cout << zero.get_name << " с количеством сторон " << zero.get_sides_count << " не создана " << ex.fig() << std::endl; }
+		catch (const error& ex) {
+			Figure zero;
+			std::cout << zero.get_name() << " с количеством сторон " << zero.get_sides_count() << " не создана " << ex.what() << std::endl;
+		}
 		Triangle one;
 		one.print();
 		Quadrangle two;
