@@ -7,8 +7,8 @@
 		return name;
 	}
 	void Triangle::print() {
-		std::cout << name << std::endl << " с углами " << a << ", " << b << ", " << c << "   и сторонами   " << A << ", " << B << ", " << C << std::endl;
+		std::cout << name << std::endl << " с углами " << a << ", " << b << ", " << c << "   и сторонами   " << A << ", " << B << ", " << C << " создан" << std::endl;
 	}
 		void Quadrangle::print() {
-		std::cout << name << std::endl << " с углами " << a << ", " << b << ", " << c << ",  " << d << "   и сторонами   " << A << ", " << B << ", " << C << ", " << D << std::endl;
+		std::cout << name << std::endl << " с углами " << a << ", " << b << ", " << c << ",  " << d << "   и сторонами   " << A << ", " << B << ", " << C << ", " << D << " создан" << std::endl;
 	}
